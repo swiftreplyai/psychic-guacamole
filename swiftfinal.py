@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 
 st.title("SwiftReply: Automatic Email Response Generation")
-st.write("Body Text")
+st.write("enter the body of the email and any additional insights you have, and then click "Generate Response". SwiftReply will analyze the email content and use its advanced algorithms to craft a response email")
 st.sidebar.header("Instructions")
 st.sidebar.info(
     '''SwiftReply is an AI-powered web application that uses natural language processing to analyze incoming emails and draft personalized and professional response emails. With SwiftReply, you can easily respond to emails that address the sender's concerns or questions, provide additional information or clarification, and maintain a professional tone. All you need to do is enter the body of the email and any additional insights you have, and then click "Generate Response". SwiftReply will analyze the email content and use its advanced algorithms to craft a response email that is personalized to the sender's needs and concerns.
