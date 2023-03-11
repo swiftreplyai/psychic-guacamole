@@ -1,9 +1,6 @@
 import streamlit as st
 import openai
 
-# Set up OpenAI API credentials
-openai.api_key = st.secrets["OPENAI_API_KEY"]
-
 st.title("SwiftReply: Automatic Email Response Generation")
 st.sidebar.header("Instructions")
 st.sidebar.info(
