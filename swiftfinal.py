@@ -1,6 +1,5 @@
 import streamlit as st
 import openai
-import os
 
 secrets = st.secrets["openai"]
 openai.api_key = secrets["api_key"]
@@ -14,7 +13,7 @@ st.sidebar.info(
 
 # Set the model engine and your OpenAI API key
 model_engine = "text-davinci-003"
-openai.api_key = "YOUR_API_KEY"
+openai.api_key = secrets["openai"]["api_key"]
 
 def generate_response_email(email_body, insight):
     '''Generates a response email based on the input email body and insight'''
