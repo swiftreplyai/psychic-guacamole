@@ -43,7 +43,7 @@ def main():
     email_body = st.text_area("Enter email body:", height=200)
 
     # Get user input for the insight
-    insight = st.text_input("Enter insight:")
+    insight = st.text_input("Enter insight:", height=100)
 
     # Generate and display the response email
     if st.button("Generate Response"):
