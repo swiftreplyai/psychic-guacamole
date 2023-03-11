@@ -51,7 +51,7 @@ def main():
         response_email = generate_response_email(email_body, insight)
         st.write(response_email)
         
-        def st_css(file_path):
+def st_css(file_path):
     with open(file_path) as f:
         css = f.read()
     return f'<style>{css}</style>'
