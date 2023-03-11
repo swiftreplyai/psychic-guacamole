@@ -1,5 +1,6 @@
 import streamlit as st
 import openai
+import streamlit.components.v1 as components
 
 secrets = st.secrets["openai"]
 openai.api_key = secrets["api_key"]
@@ -49,6 +50,13 @@ def main():
     if st.button("Generate Response"):
         response_email = generate_response_email(email_body, insight)
         st.write(response_email)
+        
+        def st_css(file_path):
+    with open(file_path) as f:
+        css = f.read()
+    return f'<style>{css}</style>'
+
+components.html(st_css("style.css"))
 
 # Call the main function
 if __name__ == '__main__':
