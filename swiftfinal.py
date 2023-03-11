@@ -4,14 +4,8 @@ import openai
 secrets = st.secrets["openai"]
 openai.api_key = secrets["api_key"]
 
-# Load custom CSS
-def local_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
-local_css("style.css")
-
 st.title("SwiftReply: Automatic Email Response Generation")
+st.markdown("Enter the email body and any additional insights you have, then click 'Generate Response'.")
 st.sidebar.header("Instructions")
 st.sidebar.info(
     '''SwiftReply is an AI-powered web application that uses natural language processing to analyze incoming emails and draft personalized and professional response emails. With SwiftReply, you can easily respond to emails that address the sender's concerns or questions, provide additional information or clarification, and maintain a professional tone. All you need to do is enter the body of the email and any additional insights you have, and then click "Generate Response". SwiftReply will analyze the email content and use its advanced algorithms to craft a response email that is personalized to the sender's needs and concerns.
@@ -20,7 +14,7 @@ st.sidebar.info(
 
 # Set the model engine and your OpenAI API key
 model_engine = "text-davinci-003"
-openai.api_key = secrets["openai"]["api_key"]
+openai.api_key = secrets["api_key"]
 
 def generate_response_email(email_body, insight):
     '''Generates a response email based on the input email body and insight'''
@@ -46,7 +40,7 @@ def main():
     '''Gets the user input and generates and displays the response email'''
 
     # Get user input for the email body
-    email_body = st.text_area("Enter email body:")
+    email_body = st.text_area("Enter email body:", height=200)
 
     # Get user input for the insight
     insight = st.text_input("Enter insight:")
@@ -59,4 +53,3 @@ def main():
 # Call the main function
 if __name__ == '__main__':
     main()
-
