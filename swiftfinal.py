@@ -37,7 +37,7 @@ def main():
     insight = st.text_input("Enter insight:")
     tone = st.selectbox("Select tone of voice:", ["formal", "casual", "friendly", "professional"])
 
-    if st.button     "Generate Response"):
+if st.button("Generate Response"):
         response_email = generate_response_email(email_body, insight, tone)
         st.write(response_email)
 
